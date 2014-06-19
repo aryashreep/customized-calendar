@@ -1,0 +1,38 @@
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>    
+<script src="calendar.js"></script>
+<script>
+$(document).ready(function(){
+  $("#calendar").click(function(){
+		//display the data
+		var d = new Date(),
+		y = d.getFullYear();
+		console.log(d);
+		console.log(calendar);
+		var monthname = new Array("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec");
+		var monName = monthname[d.getMonth()];
+
+		$("#calendarDiv").calendar({
+			legendcolumn: 0,
+			weekstart: "mon",
+			month: monName,
+			year: y,
+			previousyear: false,
+			data:{"legend":[]},
+			futureyear: true,
+			previousmonth: true,
+			futuremonth: true
+		});
+
+  });
+});
+</script>
+</head>
+<body>
+<div>Test Calendar</div>
+<div><input type="text" name="date" id="calendar" />
+<div id="calendarDiv"></div>
+</div>
+</body>
+</html>
